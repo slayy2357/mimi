@@ -1,6 +1,6 @@
 # Requests
 This part is based on Brawl Stars, but I'll probably do the same for Clash of Clans to compare.  
-Anyway, the methods for reading / modifying payloads and responses are the same across all Supercell games, so while this is for Brawl Stars, it could apply to any Supercell game.
+Anyway, the methods for reading / modifying payloads and responses are the same across all Supercell games, so while this is for Brawl Stars, it could apply to any Supercell game.  
 ## Parts
 - [Requests from client](#requests-from-client)
   - [Crypted payload analyse](#crypted-payload-analyse)
