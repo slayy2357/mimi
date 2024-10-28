@@ -32,8 +32,8 @@ CCCrypt  : 1 call
 CCCrypt call : [cccrypt-001.txt](https://github.com/slayy2357/mimi/blob/main/requests/dump/cccrypt-001.txt)
 ``` text
 libboringssl.dylib
-SSL_write          : 20+ call //interessant
-SSL_read           : 20+ call, example when you look other profiles :
+SSL_write          : 20+ call
+SSL_read           : 20+ call
 ```
 SSL_read call : [ssl_read-001.txt](https://github.com/slayy2357/mimi/blob/main/requests/dump/ssl_read-001.txt)  
 
