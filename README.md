@@ -1,3 +1,5 @@
 # Analysing Supercell's apps security (iOS)
+## Introduction
+The goal of this project is to find analyse supercell's security and find exploits for the documentation.
 ## Menu
-- [traffic](https://raw.githubusercontent.com/slayy2357/mimi/refs/heads/main/requests/README.md)
+- [traffic](https://github.com/slayy2357/mimi/blob/main/requests/README.md)
