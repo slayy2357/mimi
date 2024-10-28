@@ -14,7 +14,7 @@ You can **decompress** these files using [this tool](https://github.com/xcoder-t
 ## Server verification
 
 ### Basic knowledge
-For games with **compressed** CSV files, modifying them is more challenging due to a **security feature** that verifies the content of each CSV file **when connecting to the server**.  
+For games with **compressed** CSV files, modifying them is more challenging due to a **security feature** that verifies the content of each CSV file (sha1sum, etc) **when connecting to the server**.  
 
 If your CSV files are **not in sync** with the server’s files, you will see an **"Updating content" screen**, then the game will **reboot**, and your modified CSV file will be **replaced by the original**, compressed version.  
 
