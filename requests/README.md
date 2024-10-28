@@ -15,9 +15,9 @@
 ## Requests from client
 
 ### Crypted payload analyse  
-crypted request example : [crypted-001.txt](https://github.com/slayy2357/mimi/blob/main/dump/crypted-001.txt)  
+crypted request example : [crypted-001.txt](https://github.com/slayy2357/mimi/blob/main/requests/dump/crypted-001.txt)  
 If you modify encrypted payloads you can easily get this (or the same but with sync error):
-![alt text](https://raw.githubusercontent.com/slayy2357/mimi/refs/heads/main/pictures/1.png)
+![alt text](https://raw.githubusercontent.com/slayy2357/mimi/refs/heads/main/requests/pictures/1.png)
 
 ### Decrypting payloads  
 Analysing modules
@@ -28,13 +28,13 @@ CCSHA1   : no
 CCMD5    : no
 CCCrypt  : 1 call
 ```
-CCCrypt call : [cccrypt-001.txt](https://github.com/slayy2357/mimi/blob/main/dump/cccrypt-001.txt)
+CCCrypt call : [cccrypt-001.txt](https://github.com/slayy2357/mimi/blob/main/requests/dump/cccrypt-001.txt)
 ``` text
 libboringssl.dylib
 SSL_write          : 20+ call //interessant
 SSL_read           : 20+ call, example when you look other profiles :
 ```
-SSL_read call : [ssl_read-001.txt](https://github.com/slayy2357/mimi/blob/main/dump/ssl_read-001.txt)  
+SSL_read call : [ssl_read-001.txt](https://github.com/slayy2357/mimi/blob/main/requests/dump/ssl_read-001.txt)  
 
 So, we can read some payloads before encryption through SSL_write, SSL_read, and CCCrypt, but those aren't the main payloads. What we want to intercept is the payload sent through the send function before encryption, as that's how the game communicates with the server—for example, when joining a game, using emotes, etc  
 
@@ -45,7 +45,7 @@ Alright, I haven't found the encryption function yet, but now I'm able to read a
 
 Dump of "understandable" payload found for the moment :  
 
-[the first request](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-001.txt)  
+[the first request](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-001.txt)  
 ``` text
 Analyse :
 00000090  00 00 00 28 36 31 62 32 61 64 38 36 32 64 63 35  ...(61b2ad862dc5
@@ -72,7 +72,7 @@ Analyse :
 //maybe an ID
 //end of "readable" analyse of first req, back later to analyse / understand unreadable things
 ```
-[the render request](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-002.txt)  
+[the render request](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-002.txt)  
 ``` text
 Analyse :
 //the request look like an evaluation of performances, render e.g
@@ -81,7 +81,7 @@ Analyse :
 000001e0  31 30 00 00 00 00                                10....
 //iOS version, device model
 ```
-[shop request 1](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-003.txt), [shop request 2](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-004.txt)
+[shop request 1](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-003.txt), [shop request 2](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-004.txt)
 ``` text
 Analyse :
 //requests used for the shop, req1 is auto, req2 when you open the shop
@@ -93,11 +93,11 @@ Analyse :
 00000050  62 69 6c 6c 69 6e 67 4f 6b 22 2c 22 70 72 6f 64  billingOk","prod
 //I can buy with money
 ```
-[open news request 1](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-005.txt), [open news request 2](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-006.txt)  
+[open news request 1](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-005.txt), [open news request 2](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-006.txt)  
 
-[web API request ?](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-007.txt)  
+[web API request ?](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-007.txt)  
 
-[join training map request](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-008.txt)
+[join training map request](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-008.txt)
 ``` text
 Analyse :
 "button":2 probably the choice if you wan't to be in training map or training match vs bots
@@ -112,7 +112,7 @@ Analyse :
 "gear1":62000004 the static ID of your gear 1
 "gear2":62000002 the static ID of your gear 2
 ```
-[send text message in chat request](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-009.txt)
+[send text message in chat request](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-009.txt)
 ``` text
 Analyse :
 00000000  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
@@ -120,7 +120,7 @@ Analyse :
 00000020  00 00 00 04 6c 6d 61 6f                          ....lmao
 //the message that I send
 ```
-[send emote in chat request 1](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-010.txt), [send emote in chat request 2](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-011.txt)
+[send emote in chat request 1](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-010.txt), [send emote in chat request 2](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-011.txt)
 ``` text
 Analyse :
 //request emote 1
@@ -135,8 +135,8 @@ Analyse :
 
 //here emotes ID are 0x88 and 0x89, it's the place in a list (0x88=brawl stars emote, 0x89=numbers emote):
 ```
-![alt text](https://raw.githubusercontent.com/slayy2357/mimi/refs/heads/main/pictures/2.png)
-[game/screen status request 1](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-012.txt), [game/screen status request 2](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-013.txt)
+![alt text](https://raw.githubusercontent.com/slayy2357/mimi/refs/heads/main/requests/pictures/2.png)
+[game/screen status request 1](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-012.txt), [game/screen status request 2](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-013.txt)
 ``` text
 Analyse :
 //request 1
@@ -153,8 +153,8 @@ Analyse :
 //request 1 when you are in game and switch back to menu mode
 //request 2 when you are in menu and switch to game mode (black borders maybe)
 ```
-[all tutorial requests](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-014.txt)  
-[catalog request](https://github.com/slayy2357/mimi/blob/main/dump/decrypted-015.txt)
+[all tutorial requests](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-014.txt)  
+[catalog request](https://github.com/slayy2357/mimi/blob/main/requests/dump/decrypted-015.txt)
 
 ### Payloads modifications
 I also tried modifying different requests, and everything worked: changing the chosen hero, modifying the chat message, chat emote, ingame emotes, e.g  
@@ -168,7 +168,7 @@ I'm still working on the player position payload, rewards, etc.
 - External : the response will only be handled by external functions, like dylibs etc. They are more "low-level" and less relevant to what we are looking for
 
 ### Crypted response analyse
-Crypted response example : [crypted-002.txt](https://github.com/slayy2357/mimi/blob/main/dump/crypted-002.txt)
+Crypted response example : [crypted-002.txt](https://github.com/slayy2357/mimi/blob/main/requests/dump/crypted-002.txt)
 
 ### Decrypting internal responses
 For responses, it's a bit different compared to send requests, because there are several functions for different things. For example, there's an 'in-game responses' function (only for coordinates, etc.) and a 'menu responses' function, etc.
