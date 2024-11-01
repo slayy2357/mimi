@@ -29,4 +29,10 @@ Keep in mind that this is only a 'temporary' access. Since we aren’t connected
 ### Bugs when logged using method
 
 In this example, I’m connected to the game account using this method, and you can see that it’s not the same as the Supercell ID account (but as I said in the login intro, this is not really a bug) :
-![alt text](https://raw.githubusercontent.com/slayy2357/mimi/refs/heads/main/account-access/pictures/1.png)
+![alt text](https://raw.githubusercontent.com/slayy2357/mimi/refs/heads/main/account-access/pictures/1.png)  
+
+The friend list is synced to Supercell ID, so the friend list in the game account will appear bugged : 
+![alt text](https://raw.githubusercontent.com/slayy2357/mimi/refs/heads/main/account-access/pictures/2.png)  
+
+You will also always see yourself in the menu due to the Supercell ID account : 
+![alt text](https://raw.githubusercontent.com/slayy2357/mimi/refs/heads/main/account-access/pictures/3.png)
