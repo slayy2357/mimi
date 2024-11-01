@@ -15,6 +15,7 @@ Please note that all actions taken here are conducted using my own accounts. The
 - [Logged](#logged)
   - [Bugs when logged using method](#bugs-when-logged-using-method)
   - [Logged note](#logged-note)
+- [Critical security concerns of the bypass](#Critical-security-concerns-of-the-bypass)
 
 ## Login
 This method involves connecting to an account and modifying the login information in real-time using the previously captured login sequence. It works for the game account but not for Supercell ID at the moment. This means that when you log in using this method, you will be connected to the game account through the modified login sequence, while also being connected to the Supercell ID account you would have logged into if you hadn't altered the login sequence.  
@@ -49,3 +50,7 @@ You will also always see yourself in the menu due to the Supercell ID account :
 
 ### Logged note
 Aside from the bugs related to the Supercell ID bypass, everything works as expected when you’re connected to the game account.
+
+## Critical security concerns of the bypass
+This is a very important point because, once you've dumped the login sequence, you can log into the game account from any device at any time. Additionally, there are no emails or notifications from Supercell ID, as you aren’t connected to it.  
+This could allow for malicious modifications to the game that capture and send you the login sequences of any logged-in accounts.
